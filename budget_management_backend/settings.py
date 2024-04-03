@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -37,6 +38,19 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Extra apps
+    'rest_framework',
+    'django_filters',
+
+    # For Authentication
+    'oauth2_provider',
+    'corsheaders',  
+
+    # Our apps
+    'user.apps.UserConfig', 
+
+    'django_cleanup.apps.CleanupConfig', # should be placed after your apps
 ]
 
 MIDDLEWARE = [
@@ -105,7 +119,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+# TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 
@@ -121,3 +136,34 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'simple': {
+            'format': '{levelname}|{process:d}|{asctime}|{pathname}|{message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'info': {
+            'level': 'INFO',
+            'filename':  os.path.join(BASE_DIR, 'logs/budget_log.log'),
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'when': 'midnight',
+            'interval': 1,
+            'formatter': 'simple'
+        }
+    },
+    'loggers': {
+        'budget_log': {
+            'propagate': True,
+            'handlers': ['info'],
+            'level': 'INFO'
+        }
+    },
+}
+
+# To use custom User model
+AUTH_USER_MODEL = 'user.User'
