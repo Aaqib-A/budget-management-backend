@@ -1,0 +1,54 @@
+version: "3.8"
+
+volumes:
+    app_data:
+        name: budget_data
+    media_data:
+        name: budget_media_data
+
+services:
+
+    budget_app:
+
+        build:
+            context: ../
+            dockerfile: docker/dockerfile
+    
+        image: budget_server:development
+        container_name: budget_app
+        command: /app/docker/start.sh
+        # depends_on:
+            # - budget_db
+        env_file:
+            - ../.env
+        ports:
+            - 8001:8000
+        volumes:
+            - media_data:/app/media
+        environment:
+            # DJANGO_POSTGRES_HOST: budget_db
+            # SCHEMA: /app/schema.json
+            # REDIS_HOST: budget_redis
+            # REDIS_PORT: 6379
+            # PG_USER: budget_user
+            # PG_HOST: budget_db
+            # PG_PORT: 5432
+            # PG_PASSWORD: budget1234
+            # ELASTICSEARCH_HOST: budget_elasticsearch
+            # ELASTICSEARCH_PORT: 9200
+            CONSOLE_LOGGING_HANDLER_MIN_LEVEL: ERROR
+
+    # budget_db:
+    #     image: postgres:15-bullseye
+    #     container_name: budget_db
+    #     volumes:
+    #         - app_data:/var/lib/postgresql/data
+    #     environment:
+    #         POSTGRES_PASSWORD: budget1234
+    #         POSTGRES_USER: budget_user
+    #         POSTGRES_DB: budget
+
+
+networks:
+    default:
+        name: budget_network

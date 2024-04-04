@@ -11,12 +11,12 @@ python3 manage.py startapp user
 
 ## Database Setup Commands:
 ```bash
-CREATE DATABASE vms;
+CREATE DATABASE budget_db;
 CREATE USER budget_user WITH PASSWORD 'budget1234';
 ALTER ROLE budget_user SET client_encoding TO 'utf8';
 ALTER ROLE budget_user SET default_transaction_isolation TO 'read committed';
 ALTER ROLE budget_user SET timezone TO 'UTC';
-GRANT ALL PRIVILEGES ON DATABASE budget TO budget_user;
+GRANT ALL PRIVILEGES ON DATABASE budget_db TO budget_user;
 
 
 ## Create Python Virtual Env:
