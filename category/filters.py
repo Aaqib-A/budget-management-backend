@@ -4,7 +4,7 @@ from category.models import Category
 
 class CategoryFilter(django_filters.FilterSet):
     q = django_filters.CharFilter(method='custom_category_search', label='Search')
-    user = django_filters.CharFilter(field_name='user_username', lookup_expr='icontains')
+    user = django_filters.CharFilter(field_name='user__username', lookup_expr='icontains')
 
     category_name = django_filters.CharFilter(field_name='category_name', lookup_expr='icontains')
 
