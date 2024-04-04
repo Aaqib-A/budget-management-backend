@@ -1,0 +1,1411 @@
+{
+	"info": {
+		"_postman_id": "8ddbd60f-110c-48bf-8245-762f4d6f7595",
+		"name": "Budget Management System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20755118"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get All User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/user/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"user",
+								""
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "6bc1fb74-dd29-4270-a437-d28fe49def57",
+									"disabled": true
+								},
+								{
+									"key": "username",
+									"value": "author1",
+									"disabled": true
+								},
+								{
+									"key": "first_name",
+									"value": "Aaqib",
+									"disabled": true
+								},
+								{
+									"key": "last_name",
+									"value": "Ansari",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "admin@example.com",
+									"disabled": true
+								},
+								{
+									"key": "role",
+									"value": "author",
+									"description": "admin | author",
+									"disabled": true
+								},
+								{
+									"key": "q",
+									"value": "author",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"author1\",\n    \"role\": \"author\",\n    \"password\": \"Test@123\",\n    \"first_name\": \"Aaqib\",\n    \"last_name\": \"Ansari\",\n    \"email\": \"author1@example.com\",\n    \"phone\": \"+919999999998\",\n    \"address\": \"123 Main Street, Anytown, India 12345\",\n    \"city\": \"Any Town\",\n    \"state\": \"Maharashtra\",\n    \"country\": \"India\",\n    \"pincode\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/user/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"author2\",\n    \"role\": \"author\",\n    \"password\": \"Testing2\",\n    \"first_name\": \"Test\",\n    \"last_name\": \"Author\",\n    \"email\": \"author2@example.com\",\n    \"phone\": \"+919999999997\",\n    \"address\": \"321 Main Street, Anytown, India 54321\",\n    \"city\": \"Town Any\",\n    \"state\": \"Karnataka\",\n    \"country\": \"Germany\",\n    \"pincode\": \"09876\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/user/?user_id=4d02b2ac-a185-4026-8855-d0bb9edd9c13",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"user",
+								""
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "4d02b2ac-a185-4026-8855-d0bb9edd9c13"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/user/?user_id=4d02b2ac-a185-4026-8855-d0bb9edd9c13",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"user",
+								""
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "4d02b2ac-a185-4026-8855-d0bb9edd9c13"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Get All Category",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/category/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"category",
+								""
+							],
+							"query": [
+								{
+									"key": "category_id",
+									"value": "ef5c46df-becc-495c-91a3-0d77e8ab7125",
+									"disabled": true
+								},
+								{
+									"key": "category_name",
+									"value": "A good book",
+									"disabled": true
+								},
+								{
+									"key": "user",
+									"value": "dc82493d-1c12-4b77-81d6-a34b28f2b0ee",
+									"disabled": true
+								},
+								{
+									"key": "q",
+									"value": "book",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Category",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/category/",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"category",
+										""
+									],
+									"query": [
+										{
+											"key": "category_id",
+											"value": "ef5c46df-becc-495c-91a3-0d77e8ab7125",
+											"disabled": true
+										},
+										{
+											"key": "category_name",
+											"value": "A good book",
+											"disabled": true
+										},
+										{
+											"key": "user",
+											"value": "dc82493d-1c12-4b77-81d6-a34b28f2b0ee",
+											"disabled": true
+										},
+										{
+											"key": "q",
+											"value": "book",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Apr 2024 06:49:16 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.12"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "221"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"category_id\": \"aea93f7a-2808-4d45-a305-92798777ffcf\",\n        \"category_name\": \"ABCD\",\n        \"created_at\": \"2024-04-04T11:24:08.819360+05:30\",\n        \"updated_at\": \"2024-04-04T11:24:08.819414+05:30\",\n        \"user\": \"784b92af-a15f-4f40-a0ea-c381b005b073\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Add Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "A good book",
+									"type": "text"
+								},
+								{
+									"key": "body",
+									"value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+									"type": "text"
+								},
+								{
+									"key": "summary",
+									"value": "Lorem ipsum dolor sit amet.",
+									"type": "text"
+								},
+								{
+									"key": "document",
+									"type": "file",
+									"src": "/home/getafix/Documents/Misc/Alchemy/Resumes/Ansari Aaqib Ahmed Raashid Husain.pdf"
+								},
+								{
+									"key": "categories",
+									"value": "['sci-fi', 'adventure',  'comedy', 'thriller']",
+									"type": "text"
+								},
+								{
+									"key": "author",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/content/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"content",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add Category",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "category_name",
+											"value": "BCD",
+											"type": "text"
+										},
+										{
+											"key": "user",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/category/",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"category",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Apr 2024 07:00:11 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.12"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "218"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"category_id\": \"475b14da-1c26-4e59-ad6e-07633bf01aeb\",\n    \"category_name\": \"BCD\",\n    \"created_at\": \"2024-04-04T12:30:11.477979+05:30\",\n    \"updated_at\": \"2024-04-04T12:30:11.478014+05:30\",\n    \"user\": \"784b92af-a15f-4f40-a0ea-c381b005b073\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Category",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "category_name",
+									"value": "Name Changed",
+									"type": "text"
+								},
+								{
+									"key": "author",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/category/?category_id=475b14da-1c26-4e59-ad6e-07633bf01aeb",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"category",
+								""
+							],
+							"query": [
+								{
+									"key": "category_id",
+									"value": "475b14da-1c26-4e59-ad6e-07633bf01aeb"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Category",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "category_name",
+											"value": "Name Changed",
+											"type": "text"
+										},
+										{
+											"key": "author",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/category/?category_id=475b14da-1c26-4e59-ad6e-07633bf01aeb",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"category",
+										""
+									],
+									"query": [
+										{
+											"key": "category_id",
+											"value": "475b14da-1c26-4e59-ad6e-07633bf01aeb"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Apr 2024 07:02:03 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.12"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "227"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"category_id\": \"475b14da-1c26-4e59-ad6e-07633bf01aeb\",\n    \"category_name\": \"Name Changed\",\n    \"created_at\": \"2024-04-04T12:30:11.477979+05:30\",\n    \"updated_at\": \"2024-04-04T12:32:03.322279+05:30\",\n    \"user\": \"784b92af-a15f-4f40-a0ea-c381b005b073\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Category",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/category/?category_id=1b2dc477-2194-48a7-b734-e40cb8864495",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"category",
+								""
+							],
+							"query": [
+								{
+									"key": "category_id",
+									"value": "1b2dc477-2194-48a7-b734-e40cb8864495"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Category",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/category/?category_id=1b2dc477-2194-48a7-b734-e40cb8864495",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"category",
+										""
+									],
+									"query": [
+										{
+											"key": "category_id",
+											"value": "1b2dc477-2194-48a7-b734-e40cb8864495"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Apr 2024 07:03:14 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.12"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "Get All Transaction",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/transaction/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"transaction",
+								""
+							],
+							"query": [
+								{
+									"key": "category_id",
+									"value": "ef5c46df-becc-495c-91a3-0d77e8ab7125",
+									"disabled": true
+								},
+								{
+									"key": "category_name",
+									"value": "A good book",
+									"disabled": true
+								},
+								{
+									"key": "user",
+									"value": "dc82493d-1c12-4b77-81d6-a34b28f2b0ee",
+									"disabled": true
+								},
+								{
+									"key": "q",
+									"value": "book",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Transaction",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/transaction/",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"transaction",
+										""
+									],
+									"query": [
+										{
+											"key": "category_id",
+											"value": "ef5c46df-becc-495c-91a3-0d77e8ab7125",
+											"disabled": true
+										},
+										{
+											"key": "category_name",
+											"value": "A good book",
+											"disabled": true
+										},
+										{
+											"key": "user",
+											"value": "dc82493d-1c12-4b77-81d6-a34b28f2b0ee",
+											"disabled": true
+										},
+										{
+											"key": "q",
+											"value": "book",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Apr 2024 10:35:10 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.12"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "569"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"transaction_id\": \"f43c7d4a-3a8a-45f3-881b-b3c1b06f4794\",\n        \"title\": \"Rickshaw\",\n        \"amount\": \"10.00\",\n        \"transaction_time\": \"2024-04-04T13:07:56+05:30\",\n        \"created_at\": \"2024-04-04T13:07:57.157081+05:30\",\n        \"updated_at\": \"2024-04-04T14:41:08.975540+05:30\",\n        \"category\": \"4e56e63d-a96c-4014-9166-c1a65009e835\"\n    },\n    {\n        \"transaction_id\": \"dd64f6dc-b32b-410c-8d3d-abc51ac6ec8a\",\n        \"title\": \"Bus\",\n        \"amount\": \"6.00\",\n        \"transaction_time\": \"2024-04-04T14:41:02+05:30\",\n        \"created_at\": \"2024-04-04T14:41:03.068490+05:30\",\n        \"updated_at\": \"2024-04-04T14:41:03.068508+05:30\",\n        \"category\": \"4e56e63d-a96c-4014-9166-c1a65009e835\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Add Transaction",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Dosa\",\n    \"amount\":100.20,\n    \"category\": \"4e56e63d-a96c-4014-9166-c1a65009e835\",\n    \"transaction_time\": \"1996-01-01T05:30:00+05:30\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/transaction/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"transaction",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add Transaction",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Dosa\",\n    \"amount\":100.20,\n    \"category\": \"4e56e63d-a96c-4014-9166-c1a65009e835\",\n    \"transaction_time\": \"1996-01-01T05:30:00+05:30\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/transaction/",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"transaction",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Apr 2024 10:42:12 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.12"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "283"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"transaction_id\": \"1a3def32-433b-4537-8184-75bfbc2895c2\",\n    \"title\": \"Dosa\",\n    \"amount\": \"100.20\",\n    \"transaction_time\": \"1996-01-01T05:30:00+05:30\",\n    \"created_at\": \"2024-04-04T16:12:12.063901+05:30\",\n    \"updated_at\": \"2024-04-04T16:12:12.063926+05:30\",\n    \"category\": \"4e56e63d-a96c-4014-9166-c1a65009e835\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Transaction",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Dosa and Idli\",\n    \"amount\":100.30,\n    \"category\": \"4e56e63d-a96c-4014-9166-c1a65009e835\",\n    \"transaction_time\": \"1996-03-07T05:30:00+05:30\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/transaction/?transaction_id=91227c1b-d53b-4e30-a423-9b500d72f9c9",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"transaction",
+								""
+							],
+							"query": [
+								{
+									"key": "transaction_id",
+									"value": "91227c1b-d53b-4e30-a423-9b500d72f9c9"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Transaction",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Dosa and Idli\",\n    \"amount\":100.30,\n    \"category\": \"4e56e63d-a96c-4014-9166-c1a65009e835\",\n    \"transaction_time\": \"1996-03-07T05:30:00+05:30\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/transaction/?transaction_id=91227c1b-d53b-4e30-a423-9b500d72f9c9",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"transaction",
+										""
+									],
+									"query": [
+										{
+											"key": "transaction_id",
+											"value": "91227c1b-d53b-4e30-a423-9b500d72f9c9"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Apr 2024 10:49:08 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.12"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "292"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"transaction_id\": \"91227c1b-d53b-4e30-a423-9b500d72f9c9\",\n    \"title\": \"Dosa and Idli\",\n    \"amount\": \"100.30\",\n    \"transaction_time\": \"1996-03-07T05:30:00+05:30\",\n    \"created_at\": \"2024-04-04T16:11:06.325700+05:30\",\n    \"updated_at\": \"2024-04-04T16:19:08.694686+05:30\",\n    \"category\": \"4e56e63d-a96c-4014-9166-c1a65009e835\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Transaction",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/transaction/?transaction_id=91227c1b-d53b-4e30-a423-9b500d72f9c9",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"transaction",
+								""
+							],
+							"query": [
+								{
+									"key": "transaction_id",
+									"value": "91227c1b-d53b-4e30-a423-9b500d72f9c9"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Transaction",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/transaction/?transaction_id=91227c1b-d53b-4e30-a423-9b500d72f9c9",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"transaction",
+										""
+									],
+									"query": [
+										{
+											"key": "transaction_id",
+											"value": "91227c1b-d53b-4e30-a423-9b500d72f9c9"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Apr 2024 10:49:22 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.12"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, origin, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Budget Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"pm.collectionVariables.set(\"token\", jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"description": "client_credentials/password/authorization_code",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "{{client_id}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{client_secret}}",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "aaqib",
+							"description": "admin|aaqib",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Test@123",
+							"description": "admin|Test@123",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "admin@example.com",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/authenticate/token/",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"authenticate",
+						"token",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "CSM Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"description": "client_credentials/password/authorization_code",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "{{client_id}}",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{client_secret}}",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"description": "admin",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"description": "admin",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/authenticate/token/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"authenticate",
+								"token",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 26 Feb 2024 18:54:17 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.12"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Vary",
+							"value": "origin"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "280"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access_token\": \"Exo2pL0LdSjzAuO96ZcFq4BnVpbT7i\",\n    \"expires_in\": 36000,\n    \"token_type\": \"Bearer\",\n    \"scope\": \"read write\",\n    \"user_id\": \"6bc1fb74-dd29-4270-a437-d28fe49def57\",\n    \"username\": \"admin\",\n    \"email\": \"admin@example.com\",\n    \"role\": \"admin\",\n    \"phone\": \"+919999999999\",\n    \"full_name\": \"Admin User\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "127.0.0.1:8000",
+			"type": "string"
+		},
+		{
+			"key": "client_id",
+			"value": "Pvu1jpUI4xmpLC4eXeA17zV4q7RzKJL0GkDjEwsT",
+			"type": "string"
+		},
+		{
+			"key": "client_secret",
+			"value": "dvqvwpzC5DAx8Sm538iqyAzznJsjgEdz5mJGL85CXSMeAya6zmmBOkI9uEBwFUAXqqFmB60O4g1EgxjzvGNMCbGYRLCGrTNVURHaduVYns1ARosMwFCoYxqWRyXSzNcu",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}
