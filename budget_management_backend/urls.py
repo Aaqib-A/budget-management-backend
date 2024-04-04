@@ -23,7 +23,8 @@ from user.views.login_view import CustomTokenView
 urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r"authenticate/token/$", CustomTokenView.as_view(), name="token"),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) \
+    re_path('category/', include('category.urls')),
+]   + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) \
     + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 admin.site.site_header = 'Budget Management Backend Server'
