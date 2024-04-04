@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r"authenticate/token/$", CustomTokenView.as_view(), name="token"),
     re_path('category/', include('category.urls')),
+    re_path('transaction/', include('transaction.urls')),
 ]   + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) \
     + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

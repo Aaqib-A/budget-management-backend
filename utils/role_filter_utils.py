@@ -26,3 +26,13 @@ class RoleBasedQuery():
             query = Q(pk__in=[]) # Will return empty data
 
         return query
+    
+    def transaction_query(self):
+        if self.role == ROLES.ADMIN.value:
+            query = Q() # Will return all data
+        elif self.role == ROLES.CUSTOMER.value:
+            query = Q(category__user = self.user.user_id)
+        else:
+            query = Q(pk__in=[]) # Will return empty data
+
+        return query
