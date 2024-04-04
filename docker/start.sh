@@ -19,7 +19,7 @@ if [ "$DJANGO_DEBUG" = "true" ]; then
         --log-level DEBUG \
         --access-logfile "gunicorn_logs/debug_access.log" \
         --error-logfile "gunicorn_logs/debug_error.log" \
-        vms_server.wsgi
+        budget_management_backend.wsgi
 else
     echo "DJANGO_DEBUG = false"
     gunicorn \
@@ -29,5 +29,5 @@ else
         --log-level DEBUG \
         --access-logfile "gunicorn_logs/access.log" \
         --error-logfile "gunicorn_logs/error.log" \
-        vms_server.wsgi
+        budget_management_backend.wsgi
 fi

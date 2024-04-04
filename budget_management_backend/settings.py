@@ -49,6 +49,7 @@ INSTALLED_APPS = [
 
     # Our apps
     'user.apps.UserConfig', 
+    'category.apps.CategoryConfig', 
 
     'django_cleanup.apps.CleanupConfig', # should be placed after your apps
 ]
